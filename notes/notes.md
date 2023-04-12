@@ -119,6 +119,10 @@
     
 ## CREATE  USER MANAGEMENT
      . CRUD for User
+        php artisan make:controller Admin/UserController --resource --model=User
+    . Add the route web users
+    .Add the link to the master layout  to display users
+    . Create a folder for views/admin/users
      . Change password
      . Search User by username and email
         .Role and Permissionn CRUD
