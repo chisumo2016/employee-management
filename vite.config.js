@@ -21,12 +21,25 @@ export default defineConfig({
                 'resources/assets/admin/js/demo/chart-area-demo.js',
                 'resources/assets/admin/js/demo/chart-pie-demo.js'
             ],
+
             refresh: true,
         }),
     ],
+
     resolve: {
         alias: {
             '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
+        }
+    },
+    build : {
+        rollupOptions:{
+            output:{
+                manualChunks:{
+                    vendor:[
+
+                    ]
+                }
+            }
         }
     },
 });
