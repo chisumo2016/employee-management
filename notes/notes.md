@@ -108,3 +108,17 @@
         https://cdnjs.com/libraries/font-awesome
     - Go to home page and extend to layouts/main instead of layouts/app
         @extends('layouts.app') -> @extends('layouts.main')
+
+##  FIX LOGIN ATTEMPTS
+    - Ojective is to implement the logout 
+    - Open the app.blade.php and copy the logout funnctionality and paste into master.blade.php
+    - Three ((3) failed attempt will lock the users for 5min
+        . open app/Http/Controllers/Auth/LoginController.php
+                    protected $maxAttempts = 3;
+                    protected $decayMinutes = 5;
+    
+## CREATE  USER MANAGEMENT
+     . CRUD for User
+     . Change password
+     . Search User by username and email
+        .Role and Permissionn CRUD

@@ -16,7 +16,9 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    @vite(['resources/assets/admin/vendor/fontawesome-free/css/all.min.css','resources/assets/admin/css/sb-admin-2.min.css'])
+    @vite([
+        'resources/assets/admin/vendor/fontawesome-free/css/all.css',
+        'resources/assets/admin/css/sb-admin-2.min.css'])
 
 </head>
 
@@ -276,10 +278,17 @@
                              aria-labelledby="userDropdown">
 
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Logout
+                                {{ __('Logout') }}
                             </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+
                         </div>
                     </li>
 
@@ -350,9 +359,8 @@
 @vite([
 'resources/assets/admin/vendor/jquery/jquery.min.js',
 'resources/assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js',
-'resources/assets/admin/vendor/jquery-easing/jquery.easing.min.js',
+
 'resources/assets/admin/js/sb-admin-2.min.js',
-'resources/assets/admin/vendor/chart.js/Chart.min.js',
 'resources/assets/admin/js/demo/chart-area-demo.js',
 'resources/assets/admin/js/demo/chart-pie-demo.js',
 ])
