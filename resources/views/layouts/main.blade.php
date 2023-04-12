@@ -738,11 +738,10 @@
     'resources/assets/admin/vendor/jquery/jquery.min.js',
     'resources/assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js',
     'resources/assets/admin/vendor/jquery-easing/jquery.easing.min.js',
-    'resources/assets/admin/js/demo/sb-admin-2.min.js',
+    'resources/assets/admin/js/sb-admin-2.min.js',
     'resources/assets/admin/vendor/chart.js/Chart.min.js',
     'resources/assets/admin/js/demo/chart-area-demo.js',
     'resources/assets/admin/js/demo/chart-pie-demo.js',
-
 ])
 </body>
 
