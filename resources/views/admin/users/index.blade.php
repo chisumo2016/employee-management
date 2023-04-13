@@ -13,7 +13,24 @@
                 </div>
             @endif
             <div class="card-header">
-                <a href="{{ route('users.create') }}" class="float-right btn btn-primary">Create</a>
+                <div class="row">
+                    <div class="col">
+                        <form action="{{ route('users.index') }}" method="GET">
+                            <div class="form-row align-items-center">
+                                <div class="col">
+                                    <input type="search" name="search" class="form-control mb-2" id="inlineFormInput" placeholder="Jane">
+                                </div>
+                                <div class="col">
+                                    <button type="submit" class="btn btn-primary mb-2">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div>
+                        <a href="{{ route('users.create') }}" class="btn btn-primary mb-2">Create</a>
+                    </div>
+                </div>
+
             </div>
             <div class="card-body">
                 <table class="table">

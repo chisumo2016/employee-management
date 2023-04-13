@@ -1,6 +1,8 @@
 <?php
 
-use App\Http\Controllers\Admin\UserController as UserControllerAlias;
+
+use App\Http\Controllers\Admin\ChangePasswordController;
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +23,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('users', UserControllerAlias::class );
+Route::resource('users', UserController::class );
+Route::post('users/{user}/change-password', [ChangePasswordController::class, 'changePassword'])->name('users.change.password');

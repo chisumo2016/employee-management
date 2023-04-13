@@ -136,3 +136,13 @@
         php artisan make:request Admin/UserUpdateRequest
     - Use the logic into UserController store
     - Add the buttoon to edit
+    - Logic tto delete 
+
+## CHANGE USERS PASSWORD
+    - Ojectives is to change the user password and implememntte the search
+    - Add the form in index page to search 
+    - Add the Request $request in index method of UserController and implement the search
+    - Change the password , add inside the edit page
+    - Make Controller  ChangePassword
+        php artisan make:controller Admin/ChangePasswordController
+    - Register web route 
