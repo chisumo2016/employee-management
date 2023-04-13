@@ -183,3 +183,6 @@
         php artisan make:request Admin/StateStoreRequest
         php artisan make:request Admin/StateUpdateRequest
     - Add the Edit form and logic 
+    - Add the functionallity to delete
+
+

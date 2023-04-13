@@ -14,9 +14,12 @@ class StateController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         $states = State::all();
+        if ($request->has('search')){
+            $states = State::where('name','like', "%{$request->search}%")->get();
+        }
         return view('admin.states.index', compact('states'));
     }
 
