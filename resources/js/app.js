@@ -5,6 +5,13 @@
  */
 
 import './bootstrap';
+
+import '../assets/admin/vendor/fontawesome-free/css/all.css';
+import '../assets/admin/css/sb-admin-2.min.css';
+
+import '../assets/admin/vendor/jquery/jquery.min.js';
+import '../assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js';
+import '../assets/admin/js/sb-admin-2.min.js';
 import { createApp } from 'vue';
 
 /**

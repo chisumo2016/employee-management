@@ -16,9 +16,10 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    @vite([
-        'resources/assets/admin/vendor/fontawesome-free/css/all.css',
-        'resources/assets/admin/css/sb-admin-2.min.css'])
+    @vite(['resources/js/app.js'])
+{{--    @vite([--}}
+{{--        'resources/assets/admin/vendor/fontawesome-free/css/all.css',--}}
+{{--        'resources/assets/admin/css/sb-admin-2.min.css'])--}}
 
 </head>
 
@@ -348,14 +349,14 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-@vite([
-'resources/assets/admin/vendor/jquery/jquery.min.js',
-'resources/assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js',
+{{--@vite([--}}
+{{--'resources/assets/admin/vendor/jquery/jquery.min.js',--}}
+{{--'resources/assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js',--}}
 
-'resources/assets/admin/js/sb-admin-2.min.js',
-'resources/assets/admin/js/demo/chart-area-demo.js',
-'resources/assets/admin/js/demo/chart-pie-demo.js',
-])
+{{--'resources/assets/admin/js/sb-admin-2.min.js',--}}
+{{--'resources/assets/admin/js/demo/chart-area-demo.js',--}}
+{{--'resources/assets/admin/js/demo/chart-pie-demo.js',--}}
+{{--])--}}
 
 </body>
 

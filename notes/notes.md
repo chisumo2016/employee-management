@@ -126,3 +126,13 @@
      . Change password
      . Search User by username and email
         .Role and Permissionn CRUD
+
+## CREATE UPDATE AND DELETE USERS
+    - Objectives is  create , update and delete the users in dashboard
+    - Copy from the register blade and paste into create
+    - Create a logic in sstore method 
+    - Create a request 
+        php artisan make:request Admin/UserStoreRequest
+        php artisan make:request Admin/UserUpdateRequest
+    - Use the logic into UserController store
+    - Add the buttoon to edit
