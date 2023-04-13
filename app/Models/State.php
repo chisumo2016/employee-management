@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class State extends Model
 {
@@ -16,5 +17,12 @@ class State extends Model
     {
         return $this->belongsTo(
             related: Country::class);
+    }
+
+    public  function  cities() : HasMany
+    {
+        return $this->HasMany(
+            related: City::class,
+            foreignKey: 'state_id');
     }
 }

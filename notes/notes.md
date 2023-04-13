@@ -184,5 +184,28 @@
         php artisan make:request Admin/StateUpdateRequest
     - Add the Edit form and logic 
     - Add the functionallity to delete
+    - Addd the search functionality on index
+
+
+## CITY CRUD
+    - Objective is to create the City CRUD
+    - Make a controller
+        php artisan make:controller Admin/CityController --resource --model=State
+    - Add route in web file
+    - Add to master blade route
+    - Create a CITY CRUD   UI
+    - Implement the logic into CityController
+    - Add Mass Assigment into City Model
+    - Add the Relationship
+        1 : Many Relationship  
+        State has many states
+        Cities belongs to State
+    - Create UI for country
+    - Add the select UI and pass all the countries in the create() method
+    - Create  request for StoreCityRequest
+        php artisan make:request Admin/CityStoreRequest
+        php artisan make:request Admin/CityUpdateRequest
+    - Add the Edit form and logic 
+    - Add the functionallity to delete
 
 
