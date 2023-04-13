@@ -146,3 +146,20 @@
     - Make Controller  ChangePassword
         php artisan make:controller Admin/ChangePasswordController
     - Register web route 
+
+## CREATE A COUNTRIES
+    - Objectives is to create the countries
+    - Create the Country Controller
+            php artisan make:controller Admin/CountryController --resource --model=Country
+    - Add the web routes for countries
+    - Add route name in master.blade.php
+    - Add the UI for index,create, edit 
+    - Add the all logic inside the controller
+    - Make a request
+        php artisan make:request Admin/CountryStoreRequest
+    - Add the mass assigment to country
+    - Add the search funnctionality in index page and index() in country controller
+
+## EDIT AND DELETE COUNTRIES
+    - Objective is to bee able to delete the country
+    - 
