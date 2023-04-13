@@ -37,6 +37,7 @@ class CountryController extends Controller
     public function store(CountryStoreRequest $request)
     {
         Country::create($request->validated());
+
         return redirect()->route('countries.index')->with('message','Country Created Successfully');
     }
 

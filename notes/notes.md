@@ -208,4 +208,21 @@
     - Add the Edit form and logic 
     - Add the functionallity to delete
 
+## DEPARTMENT CRUD
+    - Objective is to create the Department CRUD
+    - Make a controller
+        php artisan make:controller Admin/DepartmentController --resource --model=Department
+    - Add route in web file
+    - Add to master blade route
+    - Create a DEPARTMENT CRUD   UI
+    - Implement the logic into DepartmentController
+    - Add Mass Assigment into Department Model
+    - Create UI for country
+    - Add the select UI and pass all the Department in the create() method
+    - Create  request for StoreDepartmentRequest
+        php artisan make:request Admin/DepartmentStoreRequest
+        php artisan make:request Admin/DepartmentUpdateRequest
+    - Add the Edit form and logic 
+    - Add the functionallity to delete
+
 
