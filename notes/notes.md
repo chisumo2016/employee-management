@@ -162,4 +162,24 @@
 
 ## EDIT AND DELETE COUNTRIES
     - Objective is to bee able to delete the country
-    - 
+    - CRUD DONE
+
+## STATE CRUD
+    - Objective is to create the State CRUD
+    - Make a controller
+        php artisan make:controller Admin/StateController --resource --model=State
+    - Add route
+    - Add to master blade route
+    - Create a State CRUD   UI
+    - Implemenet the logic into StateController
+    - Add Mass Assigment into state
+    - Add the Relationship
+        1 : Many Relationship  
+        Country has many states
+        States belongs to Country
+    - Create UI for country
+    - Add the select UI and pass all the countries in the create() method
+    - Create  request for StoreStateRequest
+        php artisan make:request Admin/StateStoreRequest
+        php artisan make:request Admin/StateUpdateRequest
+    - Add the Edit form and logic 
