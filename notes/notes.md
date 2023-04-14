@@ -248,5 +248,50 @@
         .DEFINE ALL COMPONENETS
     - Import the index.js in app.jss
     - Open the Components/Employees/Index
-    - Open the  views/Employees/index.blade  and remoove the example compoonent
+    - Open the  views/Employees/index.blade  and remove the example compoonent
+        attach the employee-index componenents
+    
+    NB:   This components <employees-index></employees-index> is registered in app.js as GC
+           
+## EMPLOYEE CRUD PART 2 WITH VUE JS
+        https://router.vuejs.org/guide/
+    - The objectives here is to use the vue router , when youu click a create button 
+        will take u to create.vue UI
+        Example :  http://employee-application.test/employees/create
+    - Inorder to be able to navigate to we should use 
+            <router-view></router-view>
+    - You can pass the above in the views/employees/index.blade.php
+        Remove the <employees-index></employees-index> 
+        Replace with <router-view></router-view>
+
+            NB
+                app.use(router)
+                must before then
+                app.mount('#app')
+    - Now we should use the router-link inorder to navigate
+        Remove <a href="#" class="btn btn-primary mb-2">Create</a>
+        Replace <router-link :to="{ name: 'EmployeesCreate' }"></<router-link >
+    - TEST IF CREATE WORKS - PASSED
+    - Add the form into Create.vue , copy from state create
+        . Add all the fields corespondence with database
+        . for date we gonna use https://www.npmjs.com/package/vue3-datepicker
+                npm i vue3-datepicker
+        . import into the Create.vue components
+                import Datepicker from '../src/datepicker/Datepicker.vue'
+
+    - To create an api's for Country, State, Department, City
+        Example:  php artisan make:controller API/CityController
+    - Add the logic to  get all counttries in CREATE.VUE file using vue
+
+
+
+
+
+
+
+
+
+
+
+
     

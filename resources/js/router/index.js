@@ -11,12 +11,12 @@ import  EmployeesEdit from  '../components/employees/Edit.vue';
     },
     {
         path: '/employees/create',
-            name: 'EmployeesCreate',
+        name: 'EmployeesCreate',
         component: EmployeesCreate
     },
     {
         path: '/employees/:id',
-            name: 'EmployeesEdit',
+        name: 'EmployeesEdit',
         component: EmployeesEdit
     }
 ];

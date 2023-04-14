@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\API\CountryController;
+use App\Http\Controllers\API\StateController;
+use App\Http\Controllers\API\DepartmentController;
+use App\Http\Controllers\API\CityController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +21,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/employees/countries',          [CountryController::class,      'countries']);
+Route::get('/employees/{country}states',    [StateController::class,        'states']);
+Route::get('/employees/departments',        [DepartmentController::class,   'departments']);
+Route::get('/employees/{state}/cities',     [CityController::class,         'cities']);

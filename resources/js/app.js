@@ -33,9 +33,9 @@ import EmployeesIndex from './components/employees/Index.vue';
 
 app.component('employees-index', EmployeesIndex);
 
-
-app.mount('#app')
 app.use(router)
+app.mount('#app')
+
 
 
 
