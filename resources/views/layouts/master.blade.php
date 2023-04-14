@@ -18,6 +18,7 @@
     <!-- Custom styles for this template-->
 {{--    @vite(['resources/js/app.js'])--}}
     @vite([
+        'resources/js/app.js',
         'resources/assets/admin/vendor/fontawesome-free/css/all.css',
         'resources/assets/admin/css/sb-admin-2.min.css'])
 

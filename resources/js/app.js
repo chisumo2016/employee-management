@@ -5,8 +5,17 @@
  */
 
 import './bootstrap';
+import '../assets/admin/vendor/fontawesome-free/css/all.css';
+import '../assets/admin/css/sb-admin-2.min.css';
 
-import { createApp } from 'vue';
+import '../assets/admin/vendor/jquery/jquery.min.js';
+import '../assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js';
+import '../assets/admin/js/sb-admin-2.min.js';
+
+//import { createApp } from 'vue';
+import { createApp } from 'vue/dist/vue.esm-bundler';
+import router from "./router/index.js";
+
 
 
 
@@ -18,23 +27,16 @@ import { createApp } from 'vue';
  * to use in your application's views. An example is included for you.
  */
 
-
-
-import ExampleComponent from './components/ExampleComponent.vue';
-app.component('employees-index', ExampleComponent);
-
-
-
 const app = createApp({});
 
-//app.use(router)
+import EmployeesIndex from './components/employees/Index.vue';
+
+app.component('employees-index', EmployeesIndex);
+
+
 app.mount('#app')
+app.use(router)
 
 
 
-// import '../assets/admin/vendor/fontawesome-free/css/all.css';
-// import '../assets/admin/css/sb-admin-2.min.css';
-//
-// import '../assets/admin/vendor/jquery/jquery.min.js';
-// import '../assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js';
-// import '../assets/admin/js/sb-admin-2.min.js';
+

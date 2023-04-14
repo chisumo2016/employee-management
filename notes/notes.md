@@ -227,10 +227,10 @@
 
 ## EMPLOYEE CRUD PART 1
     - Objective is to create employee management system with vue js.
-    - CRUD with vue.js
-    - Search Features
-    - Displayy list of employees with search and filters
-    - Create and update employee
+                . CRUD with vue.js
+                . Search Features
+                . Display list of employees with search and filters
+                . Create and update employee
     - START
     - Create an API for Employee Controller
         php artisan make:controller API/EmployeeController --resource --model=Employee
@@ -244,4 +244,9 @@
     - open the master and add the route
     - Add the vue router
             npm install vue-router
-    - import vue-router inside app.js
+    - create a folder router/index.js and define the logic
+        .DEFINE ALL COMPONENETS
+    - Import the index.js in app.jss
+    - Open the Components/Employees/Index
+    - Open the  views/Employees/index.blade  and remoove the example compoonent
+    
