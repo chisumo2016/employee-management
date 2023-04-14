@@ -293,6 +293,37 @@
             v-model="form.country_id"
             @change="getStates()"
         . create the getStates() method in Create.vue
+    - Add all logic into all controllers 
+    - Add the methods in Create.vue file
+    - Loop tthrough to each City, State, Departments and country
+    - TEST PASSED
+
+## EMPLOYEES STORE - CRUD
+    - Objective is to be able to sstore employees information intoo databbase.
+    - Add the v-model to all the fields inn Create.vue file.
+        e.g  v-model="form.date_hired"
+    - Add the submitt inn form
+    - Add the api route for emplyeess 
+    - create a request
+        php artisan make:request API/EmploymentStoreRequest
+    - Add mass assigment on employee Model
+    - TEST - FAILED
+        SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '2023-04-06T23:00:00.000Z' for column 'birthdate' 
+    - SOLUTION
+            . install moments.js
+            https://momentjs.com/
+            .npm install moment --save
+        . import moment from 'moment';
+
+    - TESTED PASSED
+
+
+
+
+
+
+
+
     
 
 

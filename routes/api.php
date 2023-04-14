@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\CountryController;
+use App\Http\Controllers\API\EmployeeController;
 use App\Http\Controllers\API\StateController;
 use App\Http\Controllers\API\DepartmentController;
 use App\Http\Controllers\API\CityController;
@@ -26,3 +27,5 @@ Route::get('/employees/countries',          [CountryController::class,      'cou
 Route::get('/employees/{country}/states',    [StateController::class,        'states']);
 Route::get('/employees/departments',        [DepartmentController::class,   'departments']);
 Route::get('/employees/{state}/cities',     [CityController::class,         'cities']);
+
+Route::resource('/employees', EmployeeController::class);
