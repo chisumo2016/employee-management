@@ -16,10 +16,10 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    @vite(['resources/js/app.js'])
-{{--    @vite([--}}
-{{--        'resources/assets/admin/vendor/fontawesome-free/css/all.css',--}}
-{{--        'resources/assets/admin/css/sb-admin-2.min.css'])--}}
+{{--    @vite(['resources/js/app.js'])--}}
+    @vite([
+        'resources/assets/admin/vendor/fontawesome-free/css/all.css',
+        'resources/assets/admin/css/sb-admin-2.min.css'])
 
 </head>
 
@@ -44,7 +44,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="/employees">
                 <span>Employee Management</span></a>
         </li>
 
@@ -350,14 +350,14 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-{{--@vite([--}}
-{{--'resources/assets/admin/vendor/jquery/jquery.min.js',--}}
-{{--'resources/assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js',--}}
+@vite([
+'resources/assets/admin/vendor/jquery/jquery.min.js',
+'resources/assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js',
 
-{{--'resources/assets/admin/js/sb-admin-2.min.js',--}}
-{{--'resources/assets/admin/js/demo/chart-area-demo.js',--}}
-{{--'resources/assets/admin/js/demo/chart-pie-demo.js',--}}
-{{--])--}}
+'resources/assets/admin/js/sb-admin-2.min.js',
+'resources/assets/admin/js/demo/chart-area-demo.js',
+'resources/assets/admin/js/demo/chart-pie-demo.js',
+])
 
 </body>
 

@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
+| Here is where you can register web index for your application. These
+| index are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
 */
@@ -32,4 +32,9 @@ Route::resource('countries', CountryController::class );
 Route::resource('states', StateController::class );
 Route::resource('cities', CityController::class );
 Route::resource('departments', DepartmentController::class );
+
 Route::post('users/{user}/change-password', [ChangePasswordController::class, 'changePassword'])->name('users.change.password');
+
+Route::get('{any}' , function (){
+    return view('admin.employees.index');
+})->where('{any}','.*');

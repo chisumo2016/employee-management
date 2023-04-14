@@ -48,7 +48,7 @@ class Kernel extends HttpKernel
     /**
      * The application's middleware aliases.
      *
-     * Aliases may be used to conveniently assign middleware to routes and groups.
+     * Aliases may be used to conveniently assign middleware to index and groups.
      *
      * @var array<string, class-string|string>
      */

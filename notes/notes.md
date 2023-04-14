@@ -151,7 +151,7 @@
     - Objectives is to create the countries
     - Create the Country Controller
             php artisan make:controller Admin/CountryController --resource --model=Country
-    - Add the web routes for countries
+    - Add the web index for countries
     - Add route name in master.blade.php
     - Add the UI for index,create, edit 
     - Add the all logic inside the controller
@@ -225,4 +225,23 @@
     - Add the Edit form and logic 
     - Add the functionallity to delete
 
+## EMPLOYEE CRUD PART 1
+    - Objective is to create employee management system with vue js.
+    - CRUD with vue.js
+    - Search Features
+    - Displayy list of employees with search and filters
+    - Create and update employee
+    - START
+    - Create an API for Employee Controller
+        php artisan make:controller API/EmployeeController --resource --model=Employee
 
+    - Register the file in weeb route
+            Route::get('{any}' , function (){
+                return view('employees.index');
+            })->where('{any}','.*');
+    - Create a folder views/Employees/index , copy from countries index.blade.php
+    - Add the the component in the  views/Employees/index
+    - open the master and add the route
+    - Add the vue router
+            npm install vue-router
+    - import vue-router inside app.js
