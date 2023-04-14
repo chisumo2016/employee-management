@@ -282,6 +282,18 @@
     - To create an api's for Country, State, Department, City
         Example:  php artisan make:controller API/CityController
     - Add the logic to  get all counttries in CREATE.VUE file using vue
+    - TEST - PASSED
+
+### EMPLOYEE CRUD DEPENDET DROPDOWN
+    - Objectives is dipslay all the countries in Craate.vue UI in dropdown
+    - Loop through the v-for in country to display all countries
+    - Add form:{} as object and pass the fields corresponnding with database .
+    - Add the v-model in country inputs
+        e.g 
+            v-model="form.country_id"
+            @change="getStates()"
+        . create the getStates() method in Create.vue
+    
 
 
 

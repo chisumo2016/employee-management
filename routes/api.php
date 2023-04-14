@@ -23,6 +23,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/employees/countries',          [CountryController::class,      'countries']);
-Route::get('/employees/{country}states',    [StateController::class,        'states']);
+Route::get('/employees/{country}/states',    [StateController::class,        'states']);
 Route::get('/employees/departments',        [DepartmentController::class,   'departments']);
 Route::get('/employees/{state}/cities',     [CityController::class,         'cities']);

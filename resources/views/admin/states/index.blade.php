@@ -37,7 +37,7 @@
                     <thead>
                     <tr>
                         <th scope="col">Id</th>
-                        <th scope="col">Country Name</th>
+                        <th scope="col">Name</th>
                         <th scope="col">Country Code</th>
                         <th scope="col">Actions</th>
                     </tr>

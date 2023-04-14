@@ -4,7 +4,7 @@
        <div class="row justify-content-center">
            <div class="col-md-8">
                <div class="card">
-                   <div class="card-header">Create Employees'
+                   <div class="card-header">Create Employees
                        <router-link
                            :to="{ name: 'EmployeesIndex' }"
                            class="float-right">
@@ -87,11 +87,18 @@
 
                                <div class="col-md-6">
                                    <select
+                                       v-model="form.state_id"
+                                       @change="getCities()"
                                        name="state"
                                        class="form-control"
                                        aria-label="Default select example">
-                                       <option selected>Select State</option>
 
+                                       <option
+                                           v-for="state in states"
+                                           :key="state.id"
+                                           :value="state.id">
+                                           {{ state.name }}
+                                       </option>
                                    </select>
                                </div>
                            </div>
@@ -104,11 +111,16 @@
 
                                <div class="col-md-6">
                                    <select
+                                       v-model="form.city_id"
                                        name="city"
                                        class="form-control"
                                        aria-label="Default select example">
-                                       <option selected>Select City</option>
-
+                                       <option
+                                           v-for="city in cities"
+                                           :key="city.id"
+                                           :value="city.id">
+                                           {{ city.name}}
+                                       </option>
                                    </select>
                                </div>
                            </div>
@@ -136,10 +148,16 @@
 
                                <div class="col-md-6">
                                    <select
+                                       v-model="form.country_id"
+                                       @change="getStates()"
                                        name="country"
                                        class="form-control"
                                        aria-label="Default select example">
-                                       <option selected>Select Country</option>
+
+                                       <option
+                                           v-for="country in countries"
+                                           :key="country.id"
+                                           :value="country.id">{{ country.name }}</option>
 
                                    </select>
                                </div>
@@ -153,10 +171,16 @@
 
                                <div class="col-md-6">
                                    <select
+                                       v-model="form.department_id"
                                        name="department"
                                        class="form-control"
                                        aria-label="Default select example">
-                                       <option selected>Select Department</option>
+                                       <option
+                                           v-for="department in departments"
+                                           :key="department.id"
+                                           :value="department.id">
+                                           {{ department.name}}
+                                       </option>
 
                                    </select>
                                </div>
@@ -214,10 +238,24 @@ export default {
             states:[],
             departments:[],
             cities:[],
+            form:{
+                first_name: '',
+                last_name: '',
+                middle_name: '',
+                address: '',
+                country_id:'',
+                state_id: '',
+                department_id:'',
+                city_id:'',
+                zip_code:'',
+                birthdate:null,
+                date_hired: null
+            }
         }
    },
     created() {
         this.getCountries()
+        this.getDepartments()
     },
     methods:{
         getCountries(){
@@ -227,7 +265,31 @@ export default {
                   }).catch(error => {
                       console.log(console.error)
             })
-        }
+        },
+        getStates(){
+            axios.get('/api/employees/'+ this.form.country_id + '/states')
+                .then(res => {
+                    this.states = res.data
+                }).catch(error => {
+                console.log(console.error)
+            })
+        },
+        getCities(){
+            axios.get('/api/employees/'+ this.form.state_id + '/cities')
+                .then(res => {
+                    this.cities = res.data
+                }).catch(error => {
+                console.log(console.error)
+            })
+        },
+        getDepartments(){
+            axios.get('/api/employees/departments')
+                .then(res => {
+                    this.departments = res.data
+                }).catch(error => {
+                console.log(console.error)
+            })
+        },
     }
 };
 </script>
