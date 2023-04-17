@@ -341,7 +341,27 @@
         . add the buttton to delete the employee
         . add the logic to delete employee in index page
         .  Add the route file
-        .  
+        .  Add the logic to delete the employee with vue jss
+
+## EMPLOYEE  UPDATE
+    - Objective is update the employee informationn with vue js
+    - Before we start let us add this piece of code in create.vue IN  store
+                 this.$router.push({name: 'EmployeesIndex'});
+                }) .then(res => {
+                this.$router.push({name: 'EmployeesIndex'});
+                //this.departments = res.data
+            }).catch(error => {
+                console.log(console.error)
+            })
+    -  Now open the edit.vue page  
+        . copy from create a page
+        . Add the new method called getEmployee(){}
+        . Make a EmployeeSingleResorce
+            php artisan make:resource API/EmployeeSingleResourcephp artisan make:resource API/EmployeeSingleResource
+        .Change storeEmployee() into updateEmployee
+    - Open the Employyee Controller and logic into update
+    - Create EmployeeUpdateRequest
+        php artisan make:request API/EmploymentUpdateRequest
 
 
 

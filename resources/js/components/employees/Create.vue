@@ -319,7 +319,8 @@ export default {
                 'birthdate'     : this.format_date(this.form.birthdate),
                 'date_hired'    : this.format_date(this.form.date_hired),
             }) .then(res => {
-                this.departments = res.data
+                this.$router.push({name: 'EmployeesIndex'});
+                //this.departments = res.data
             }).catch(error => {
                 console.log(console.error)
             })

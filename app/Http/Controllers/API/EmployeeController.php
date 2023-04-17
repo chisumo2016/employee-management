@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\API\EmployeeUpdateRequest;
 use App\Http\Requests\API\EmploymentStoreRequest;
 use App\Http\Resources\API\EmployeeResource;
+use App\Http\Resources\API\EmployeeSingleResource;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 
@@ -44,7 +46,7 @@ class EmployeeController extends Controller
      */
     public function show(Employee $employee)
     {
-        //
+        return new EmployeeSingleResource($employee);
     }
 
     /**
@@ -52,15 +54,15 @@ class EmployeeController extends Controller
      */
     public function edit(Employee $employee)
     {
-        //
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Employee $employee)
+    public function update( EmployeeUpdateRequest $request, Employee $employee)
     {
-        //
+        $employee->update($request->validated());
     }
 
 
@@ -71,6 +73,6 @@ class EmployeeController extends Controller
     {
         $employee->delete();
 
-        return response()->json('Deleted');
+        return response()->json('Employee Deleted Successfully');
     }
 }

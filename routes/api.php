@@ -28,4 +28,4 @@ Route::get('/employees/{country}/states',    [StateController::class,        'st
 Route::get('/employees/departments',        [DepartmentController::class,   'departments']);
 Route::get('/employees/{state}/cities',     [CityController::class,         'cities']);
 
-Route::resource('/employees', EmployeeController::class);
+Route::apiResource('/employees', EmployeeController::class);
