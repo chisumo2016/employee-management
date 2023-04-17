@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\API\EmploymentStoreRequest;
+use App\Http\Resources\API\EmployeeResource;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        //
+        $employees = Employee::all();
+
+        return EmployeeResource::collection($employees);
     }
 
     /**
@@ -60,11 +63,14 @@ class EmployeeController extends Controller
         //
     }
 
+
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Employee $employee)
     {
-        //
+        $employee->delete();
+
+        return response()->json('Deleted');
     }
 }

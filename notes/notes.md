@@ -1,6 +1,7 @@
 ###  Employee APPLICATION
             Pa$$w0rd!  
 ## SETUP APPLICATION
+        https://dev.to/tanzimibthesam/how-to-install-vuevue-routertailwind-with-laravel-9vite-47ec
         https://techvblogs.com/blog/how-to-install-bootstrap-5-in-laravel-9-with-vite
     - install the application via command
     https://github.com/laravel/ui
@@ -20,6 +21,7 @@
 
 
 ### INSTALL VUE 3 IN  VITE
+        https://dev.to/tanzimibthesam/how-to-install-vuevue-routertailwind-with-laravel-9vite-47ec
         https://techvblogs.com/blog/how-to-install-vue-3-in-laravel-9-with-vite
     - Install the vue js
         php artisan ui vue
@@ -316,6 +318,30 @@
         . import moment from 'moment';
 
     - TESTED PASSED
+
+## EMPLOYEES DISPLAY AND DELETE
+    https://router.vuejs.org/guide/essentials/named-routes.html
+    - Objective is to be able to display all the employees in index.vue 
+    - Make a resouce for employee
+            https://laravel.com/docs/10.x/eloquent-resources
+            php artisan make:resource API/EmployeeResource
+            .Add fields
+    - Open the index() in API/EmployeeCoontroller and add logic
+    - Open the Index.vue 
+    - Add the relationship in Employee Model
+    -  Loop through to display all employee
+    - TEST PASSED
+    - Add the functionality to edit the employeee
+        . add the router link on anchor tag
+            <a href="#" class="btn btn-success">Edit</a> TO
+            <router-link :to="{name:EmployeesEdit, params: {id: employee.id} }" class="btn btn-success"></router-link>
+        .Test to see if u can navigate 
+            [Vue warn]: Property "EmployeesEdit" was accessed during render but is not defined on instance. 
+            SOLUTION : name: 'EmployeesEdit'
+        . add the buttton to delete the employee
+        . add the logic to delete employee in index page
+        .  Add the route file
+        .  
 
 
 
