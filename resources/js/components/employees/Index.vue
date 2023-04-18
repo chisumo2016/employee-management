@@ -17,10 +17,32 @@
                             <form action="" method="GET">
                                 <div class="form-row align-items-center">
                                     <div class="col">
-                                        <input type="search" name="search" class="form-control mb-2" id="inlineFormInput" placeholder="Tanzania">
+                                        <input
+                                            v-model.lazy="search"
+                                            type="search"
+                                            class="form-control mb-2"
+                                            placeholder="Seach">
                                     </div>
                                     <div class="col">
-                                        <button type="submit" class="btn btn-primary mb-2">Search</button>
+                                        <button
+                                            type="submit"
+                                            class="btn btn-primary mb-2">
+                                            Search
+                                        </button>
+                                    </div>
+                                    <div class="col">
+                                        <select
+                                            v-model="selectedDepartment"
+                                            name="city"
+                                            class="form-control"
+                                            aria-label="Default select example">
+                                            <option
+                                                v-for="department in departments"
+                                                :key="department.id"
+                                                :value="department.id">
+                                                {{ department.name}}
+                                            </option>
+                                        </select>
                                     </div>
                                 </div>
                             </form>
@@ -85,16 +107,34 @@ export default {
         return{
             employees: [],
             showMessage: false,
-            message: ''
+            message: '',
+            search:'',
+            selectedDepartment: null,
+            departments: []
         }
     },
+    watch:{
+        search(){
+            this.getEmployees();
+        },
+        selectedDepartment(){
+            this.getEmployees()
+        }
+    },
+
     created() {
         this.getEmployees();
+        this.getDepartments()
     },
 
     methods:{
         getEmployees() {
-            axios.get('/api/employees')
+            axios.get('/api/employees',{params:
+                    {
+                        search: this.search,
+                        department_id: this.selectedDeprtment
+                    }
+                })
                 .then(res =>{
                     this.employees = res.data.data
                 }).catch(error =>{
@@ -111,7 +151,15 @@ export default {
                 }).catch(error =>{
                 console.log(error)
             })
-        }
+        },
+        getDepartments(){
+            axios.get('/api/employees/departments')
+                .then(res => {
+                    this.departments = res.data
+                }).catch(error => {
+                console.log(console.error)
+            })
+        },
     }
 };
 

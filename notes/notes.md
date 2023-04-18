@@ -1,4 +1,5 @@
 ###  Employee APPLICATION
+      https://dev.to/kumareth/a-beginner-s-guide-for-setting-up-autocomplete-on-ohmyzsh-hyper-with-plugins-themes-47f2
             Pa$$w0rd!  
 ## SETUP APPLICATION
         https://dev.to/tanzimibthesam/how-to-install-vuevue-routertailwind-with-laravel-9vite-47ec
@@ -362,6 +363,29 @@
     - Open the Employyee Controller and logic into update
     - Create EmployeeUpdateRequest
         php artisan make:request API/EmploymentUpdateRequest
+    - Add the logic to update the  employee in Edit.vue page
+    - Test : not passed
+
+## EMPLOYEE SEARCH AND FILTER
+    - Objective is implement the filter and search 
+    - Open the Empployee/Indexphp and look for search
+        . edit the input
+        . steeel the select in edit.vue and paste into index.vue
+        . pass the props inn data() methods
+        .create a getDepartments() method
+        . call getDepartments() in created() method when the componentt is mounted
+    - Impelement seach by name and filter by department
+        . open index and the params in getEmployee(){}
+        . add watch method and call
+                search(){
+            this.getEmployees();
+        },
+        selectedDepartment(){
+            this.getEmployees()
+        }
+    - Open the Employee Controller, add logic in index() for search
+        
+
 
 
 
